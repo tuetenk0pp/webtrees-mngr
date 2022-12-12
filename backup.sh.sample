@@ -17,9 +17,9 @@ borg create                             \
     --compression zstd,10               \
     --exclude-caches                    \
     ::'webtrees-{now}'                  \
+    /etc/apache2/                       \
     /etc/letsencrypt/                   \
-    /root/backup.sh                     \
-    /etc/apache2/sites-available/       \
+    /etc/php/                           \
     /var/www/webtrees/                  \
     /var/lib/mysql/db_backup.sql        \
 
