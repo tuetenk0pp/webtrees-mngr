@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# Repo
+export BORG_REPO
+
+echo "Change Working Directory"
+cd ~/
+
+echo "Starting backup"
+
+sudo mysqldump --all-databases --compress > /var/lib/mysql/db_backup.sql
+
+# Do backup
+borg create                             \
+    --list                              \
+    --stats                             \
+    --compression zstd,10               \
+    --exclude-caches                    \
+    ::'webtrees-{now}'                  \
+    /etc/letsencrypt/                   \
+    /root/backup.sh                     \
+    /etc/apache2/sites-available/       \
+    /var/www/webtrees/                  \
+    /var/lib/mysql/db_backup.sql        \
+
+backup_exit=$?
+
+echo "Pruning repository"
+
+# Use the `prune` subcommand to maintain 10 daily, 6 weekly and 12 monthly
+# archives of THIS machine. The '{hostname}-' prefix is very important to
+# limit prune's operation to this machine's archives and not apply to
+# other machines' archives also:
+
+borg prune                          \
+    --list                          \
+    --prefix 'webtrees-'            \
+    --show-rc                       \
+    --keep-daily 10                 \
+    --keep-weekly 6                 \
+    --keep-monthly 12               \
+
+prune_exit=$?
+
+# actually free repo disk space by compacting segments
+
+# echo "Compacting repository"
+# borg compact --threshold
+
+exit
