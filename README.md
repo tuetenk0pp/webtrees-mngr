@@ -31,5 +31,6 @@ git clone https://github.com/Tuetenk0pp/webtrees-mngr.git ~/webtrees-mngr && cd 
 - [x] error management, exits
 - [x] backup integration
 - [ ] other distros?
-    - [ ] Gentoo
-    - [ ] Raspian
+    - [ ] Raspberry Pi OS
+    - [ ] Debian
+    - [ ] Rocky Linux
