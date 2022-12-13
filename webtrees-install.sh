@@ -13,7 +13,7 @@ echo "This is an interactive install-script for webtrees."
 echo "It is meant for non-technical users who want to get a Webtrees installation up quickly."
 echo "The script needs a fresh ubuntu-server install to run on."
 echo "Do not continue if you already have a webserver and some sort of webapp installed!"
-echo "Please submit any issues here https://github.com/Tuetenk0pp/webtrees-install/issues/."
+echo "Please submit any issues here https://github.com/Tuetenk0pp/webtrees-mngr/issues/."
 echo "Would you like to continue with the installation?"
 select yn in "Yes" "No"; do
         case $yn in
