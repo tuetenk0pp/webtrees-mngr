@@ -27,7 +27,7 @@ git clone https://github.com/Tuetenk0pp/webtrees-mngr.git ~/webtrees-mngr && cd 
 
 ## Contributions
 
-Have a look at the [Issues Tab](./issues) to find out how you can help.
+Have a look at the [Issues Tab](../issues) to find out how you can help.
 Submit a PR only if you tested your changes already.
 
 ## License
