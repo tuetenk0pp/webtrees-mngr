@@ -25,12 +25,11 @@ git clone https://github.com/Tuetenk0pp/webtrees-mngr.git ~/webtrees-mngr && cd 
 4. Provide details and select options as the script runs
 5. Visit your domain and enjoy your new webtrees install
 
-## Roadmap
+## Contributions
 
-- [x] logging: while it is possible to run `sudo ./webtrees-install.sh | tee webtrees-install.log`, it messes up the console output
-- [x] error management, exits
-- [x] backup integration
-- [ ] other distros?
-    - [ ] Raspberry Pi OS
-    - [ ] Debian
-    - [ ] Rocky Linux
+Have a look at the [Issues Tab](./issues) to find out how you can help.
+Submit a PR only if you tested your changes already.
+
+## License
+
+[MIT License](./LICENSE.md)
